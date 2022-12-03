@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee&family=Abel&family=Bowlby+One&display=swap');
+:root {
+    /* fonts */ 
+    --header-font: 'Bowlby One', impact;
+    --accent-font: 'Abel', verdana; 
+    --body-font: 'ABeeZee', helvetica;
+    /* colors */ 
+    --light-accent: #F5F3EB; 
+    --main-accent: #7FA4AD;
+    --second-accent: #DE9D49;
+}
+body {
+    text-align: center;
+}
+h1 {
+    margin: 0;
+    color: var(--main-accent);
+    font-family: 'Bowlby One', impact;
+    font-size: 2em;
+    text-align: center;
+}
+h2 {
+    color: var(--second-accent);
+    margin: 0.5em 0;
+}
+a {
+    font-family: var(--accent-font);
+    text-decoration: none;
+    color: var(--main-accent);
+}
+p {
+    background-color: rgb(233, 233, 233);
+    border-radius: 8px;
+    padding: 10px;
+    margin:auto;
+    width: 50%;
+    text-align: center;
+}
+
+div {
+    margin:auto;
+    text-align: center; 
+    width: 500px;
+}
+.view {
+    margin-top: 10px;
+    padding: 8px;
+    background-color:lightsteelblue;
+    color:white;
+    border-width: 0;
+    border-radius: 10px;
+    width: 175px;
+}
+.back {
+    margin-top: 10px;
+    padding: 8px;
+    background-color:rgb(185, 185, 185);
+    color:white;
+    border-width: 0;
+    border-radius: 10px;
+    width: 175px;
+}
+.container {
+    background-color: rgb(233, 233, 233);
+    border-radius: 10px;
+    padding-bottom: 20px;
+    margin-bottom: 15px;
+}
+label {
+    padding-bottom: 10px;
+}
