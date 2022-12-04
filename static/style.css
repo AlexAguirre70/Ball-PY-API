@@ -40,7 +40,7 @@ p {
 div {
     margin:auto;
     text-align: center; 
-    width: 500px;
+    width: 600px;
 }
 .view {
     margin-top: 10px;
@@ -51,10 +51,19 @@ div {
     border-radius: 10px;
     width: 175px;
 }
+button, .newReptile {
+    margin-top: 10px;
+    padding: 8px;
+    background-color:#DE9D49;
+    color:white;
+    border-width: 0;
+    border-radius: 10px;
+    width: 175px;
+}
 .back {
     margin-top: 10px;
     padding: 8px;
-    background-color:rgb(185, 185, 185);
+    background-color:#7FA4AD;
     color:white;
     border-width: 0;
     border-radius: 10px;

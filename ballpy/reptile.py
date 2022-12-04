@@ -1,4 +1,5 @@
 from flask import(Blueprint, render_template,request)
+from . import models
 
 bp=Blueprint('reptile',__name__,url_prefix='/reptiles')
 
@@ -11,8 +12,18 @@ bp=Blueprint('reptile',__name__,url_prefix='/reptiles')
 def new_reptile():
     return render_template('new.html')
 
-
 # Add Reptile to database route
+@bp.route('/',methods=["POST"])
+def Index_Add():
+    if request.method == "POST":
+        newName= request.form['name']
+        newType= request.form['reptile_type']
+        newInfo= request.form['info']
 
+        newReptile=models.Reptile(name=newName,reptile_type=newType,info=newInfo)
+        models.db.session.add(newReptile)
+        models.db.session.commit()
+
+        return render_template('index.html')
 
 

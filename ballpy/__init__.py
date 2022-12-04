@@ -3,7 +3,7 @@ from flask_migrate import Migrate
 
 
 def create_app():
-    app = Flask(__name__)
+    app = Flask(__name__, static_folder='../static')
 
 
 # add SQLAlchemy config
