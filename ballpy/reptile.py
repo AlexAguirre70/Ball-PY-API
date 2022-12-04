@@ -9,7 +9,7 @@ bp=Blueprint('reptile',__name__,url_prefix='/reptiles')
 # Get Add Reptile form route
 @bp.route('/new')
 def new_reptile():
-    return render_template('reptiles/new.html')
+    return render_template('new.html')
 
 
 # Add Reptile to database route

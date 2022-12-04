@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import (Flask, render_template)
 from flask_migrate import Migrate
 
 
@@ -17,6 +17,10 @@ def create_app():
 # Instantiate Migrate
     migrate = Migrate(app, models.db)
 
+#default index route
+    @app.route('/')
+    def index():
+        return render_template('index.html')
 #register the blueprint
     from . import reptile
     app.register_blueprint(reptile.bp)
