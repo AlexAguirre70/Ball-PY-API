@@ -1,6 +1,6 @@
 from flask import(Blueprint, render_template,request,redirect)
 from . import models
-
+import json
 bp=Blueprint('reptile',__name__,url_prefix='/reptiles')
 
 # Get all of Reptiles in Json
@@ -16,12 +16,33 @@ def Index():
         models.db.session.commit()
 
         return redirect('../')
+        
+    if request.method=="GET":
+        results= models.Reptile.query.all()
+        reptile_dict= []
+        
+        for reptile in results:
+            addList={"id:"+str(reptile.id),"name:"+reptile.name,"reptile_type:"+reptile.reptile_type,"info:"+reptile.info}
+            reptile_dict.append(addList)
+        
+        return json.dumps(reptile_dict)
+    return "The list has been sent"
 
-    return "This returns the list of reptiles"
 # Get a reptile by ID route
 @bp.route('/<int:id>')
 def getReptile(id):
-    return "This returns a reptile by ID"
+    reptile = models.Reptile.query.filter_by(id=id).first()
+
+    # Reptile information:  directory
+    reptile_dict = {
+        'id': reptile.id,
+        'name': reptile.name,
+        'reptile_type': reptile.reptile_type,
+        'info': reptile.info
+    }
+    
+    # return the dictionary, which will get returned as JSON by default
+    return reptile_dict
 
 
 # Get Add Reptile form route
